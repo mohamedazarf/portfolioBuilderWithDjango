@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h3><li class="navbar-brand">SingnUp</li></h3>
+    </nav>   
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">your name</label>
+            <input type="text" name="name" id="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">your password</label>
+            <input type="password" name="password" id="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">register</button>
+    </form>
+    <h1>sign up by:</h1>
+    <h1>Facebook</h1></a>
+    <a href="{% url 'social:begin' 'facebook' %}">
+    <img style="cursor:pointer"src="{% static '/images/facebook.PNG' %}" id="image"  onclick="chback()">
+</a>
+</body>
+<script>
+function chback(){
+    // document.body.style.backgroundColor="red";
+}
+</script>
+</html>

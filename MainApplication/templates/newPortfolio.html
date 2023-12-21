@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new Portfolio</title>
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <ul class="breadcrumb my-4">
+           <h3>
+            <li class="navbar-brand  "><a href="{% url 'showAccounts'%}">Accounts/</a><a href="{% url 'showOneAccount' account.accountId%}">{{account.login}}</a>{% block header %}/new{% endblock %} </li>
+           </h3>
+        </ul>
+    </div>
+    </nav>
+    <form action="" method="post">
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="whoareyou">who are you</label>
+        <textarea name="whoareyou" id="whoareyou" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="wdyd">what does you do</label>
+        <textarea name="wdyd" id="wdyd" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="career_summary">career_summary</label>
+        <textarea name="career_summary" id="career_summary" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="A_philosophy_statement">A_philosophy_statement</label>
+    <textarea name="A_philosophy_statement" id="A_philosophy_statement" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="A_short_biography">A_philosophy_statement</label>
+        <textarea name="A_short_biography" id="A_short_biography" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Professional_accomplishments">A_philosophy_statement</label>
+        <textarea name="Professional_accomplishments" id="Professional_accomplishments" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Awards_and_honors">A_philosophy_statement</label>
+        <textarea name="Awards_and_honors" id="Awards_and_honors" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Transcripts_degrees_licenses_certifications">A_philosophy_statement</label>
+        <textarea name="Transcripts_degrees_licenses_certifications" id="Transcripts_degrees_licenses_certifications" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Volunteering_community_service">A_philosophy_statement</label>
+        <textarea name="Volunteering_community_service" id="Volunteering_community_service" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="References_testimonials">A_philosophy_statement</label>
+        <textarea name="References_testimonials" id="References_testimonials" cols="30" rows="10" class="form-control"></textarea>
+    </div> 
+   <button type="submit">add</button>
+     </form>
+    <!-- <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+    </form> --> 
+</body>
+</html>

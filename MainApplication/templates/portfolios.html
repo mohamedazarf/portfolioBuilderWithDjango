@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+    <title>Document</title>
+</head>
+<body>
+<!--<a href="%url 'newPortfolio' account.pk%" class="btn btn-primary">add</a>-->
+<a href="%url 'newPortfolio'" class="btn btn-primary">add</a>
+    <table class="table">
+        <thead class="thead-dark">
+           <th>who are you </th>
+           <th>what does you do</th>
+           <th>career summary</th>
+           <th>A philosophy statement</th>
+           <th>A short biography</th>
+           <th>Professional accomplishments</th>
+           <th>Awards and honors</th>
+           <th>Transcripts degrees licenses certifications</th>
+           <th>Volunteering community service</th>
+           <th>References_testimonials</th>
+           <th>associated account</th>
+        </thead>
+        <tbody>
+           {% for portfolio in portfolios%}
+           <tr>
+               <td>{{portfolio.who_is_you}}</td>
+               <td>{{portfolio.what_does_you_do}}</td>
+               <td>{{portfolio.career_summary}}</td>
+               <td>{{portfolio.A_philosophy_statement}}</td>
+               <td>{{portfolio.A_short_biography}}</td>
+               <td>{{portfolio.Professional_accomplishments}}</td>
+               <td>{{portfolio.Awards_and_honors}}</td>
+               <td>{{portfolio.Transcripts_degrees_licenses_certifications}}</td>
+               <td>{{portfolio.Volunteering_community_service}}</td>
+               <td>{{portfolio.References_testimonials}}</td>
+               <td>{{portfolio.portfolioAccount}}</td>
+           </tr>
+           {%endfor%}
+        </tbody>
+       </table>
+   </div>
+   </body>
+   </html>
+</body>
+</html>

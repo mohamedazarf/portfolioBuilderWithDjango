@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accounts</title>
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+    
+</head%>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h3><li class="navbar-brand">Accounts</li></h3>
+    </nav>
+
+       
+    
+    <table class="table">
+     <thead class="thead-dark">
+        <th>accountId</th>
+        <th>accountName</th>
+        <th>accountPassword</th>
+     </thead>
+     <tbody>
+        {% for account in accounts%}
+        <tr>
+            <td>{{account.accountId}}</td>
+            <td><a href="{% url 'showOneAccount' account.pk %}">{{account.login}}</a></td>
+            <td>{{account.password}}</td>
+            <td><button class="btn btn-danger" ><a class="a" href="{% url 'deleteAccount' account.pk %}">delete</a></button></td>
+        </tr>
+        {%endfor%}
+     </tbody>
+    </table>
+</div>
+</body>
+<style>
+    a{
+     text-decoration: none; color:black;}
+     a:hover{font-size: larger;}
+</style>
+</html>

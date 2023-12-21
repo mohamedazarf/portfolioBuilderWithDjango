@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+    <title>{{account.login}}</title>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a onclick='f()' href="{{account.accountId}}" id="linkId">advanced</a>
+        <ul class="breadcrumb my-4">
+           <h3>
+            <li class="navbar-brand "><a href="{% url 'showAccounts' %}">Accounts</a> /{{account.login}}</li>
+           </h3>
+           <a href="delete" style="margin-right:20px;" class="btn btn-primary">delete account</a>  
+           {% if portfolio  is None %}
+           <a href="new" class="btn btn-primary" style="margin-right:50px;">add portfolio</a>
+           {% endif %}
+           {% if portfolio  is not None %}
+           <a href="deletePortfolio" class="btn btn-primary">delete portfolio</a>
+            
+           {% endif %}
+        </ul>
+
+        <div class="btn-group">
+            <form action="" method="post">
+            {% csrf_token %}
+            <input type="color" id="color" name="color">
+            <button type="submit" class="btn btn-danger" onclick="fun()" href="updateColor">confirm</button>         
+            </form>
+        </div>
+    </div>
+ </nav>
+ <div class="row">
+<div class="col-md-10 offset-md-1">
+  <div class="card">
+      <div class="card-header">
+        your portfolio ID
+        <h1 id="pID" class="shadow">{{account.accountId}}</h1>
+      </div>
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 shadow " >
+                <h3>who are you</h3>
+                     </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.who_is_you}}</textarea>
+
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>what does you do?</h3>
+                 </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.what_does_you_do}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>carrer summary</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.career_summary}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>philosophy statement</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.A_philosophy_statement}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>short bioagraphy</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.A_short_biography}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>Professional accomplishments</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.Professional_accomplishments}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>awards and honors</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.Awards_and_honors}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>transcripts,degree,licences and certifications</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.Transcripts_degrees_licenses_certifications}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>Volunteering/community service</h3>
+            </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.Volunteering_community_service}}</textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 shadow " >
+            <h3>References/testimonials</h3>
+        </div>
+        <textarea name="" id="" cols="30" rows="5" readonly>{{portfolio.References_testimonials}}</textarea>
+        <a class="btn btn-primary" onclick="edit(this)" href="update">edit</a> 
+    </div>
+</div>
+  </div>
+</div>
+</div>
+</body>
+<script>
+    function edit(e){
+e.target.closest('textarea').readonly=false;
+console.log("yes");
+// let texts=document.getElementsByTagName("textarea");
+// const arr=Array.from(texts);
+// arr.forEach(element => {element.readOnly=false;});
+// console.log(arr);
+    }
+    // function f(){
+    //  document.getElementById('linkId').style.display="none";   
+    // }
+    
+    function fun(){
+        value=document.getElementById('color').value;
+        document.body.style=event.target.value;
+        console.log(value);
+    
+    }
+</script>
+<style>
+    #pID{
+width: 50px; text-align: center;
+    }
+</style>
+</html>

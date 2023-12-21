@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" id="FormId">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="login">your login</label>
+            <input type="text" name="login" id="login" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">your password</label>
+            <input type="password" name="password" id="password" class="form-control">
+        </div>
+        <!-- <button type="submit" class="btn btn-primary"><a href="accounts/{primary}">connecter</a></button> -->
+        <button type="submit" class="btn btn-primary" style="margin-top:20px;">connecter</button> 
+        <!-- <a id="LinkId" href="{{account.accountId}}">connecter</a> -->
+    
+    </form>
+    <a href="admin" class="btn btn-primary" style="margin-top:20px;">I'm the admin</a>
+</body>
+<script>
+//     document.getElementById("LinkId").onclick = function() {
+//     document.getElementById("FormId").submit();
+// }
+</script>
+</html>

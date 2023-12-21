@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+        <h1><li class="navbar-brand col-md-4 offset-md-4" style="text-align: center;">portfolio builder</li></h1>
+    </nav>
+<div class="row">
+    <div class="col-md-4 offset-md-4"">
+ <div class="card">
+<div class="card-header">
+    <div class="col-md-12 text-center">
+    <h1>welcome</h1>
+    </div>
+</div>
+<div calss="card-body">
+    <div class="col-md-12 text-center">
+    <br>
+    <!-- <button class="btn btn-primary" href="signup">sign up</button> -->
+    <a href="signup" class="btn btn-primary">sign up</a> 
+    <br>
+    <br>
+    <br>
+  <a href="login" class="btn btn-primary">already have an account </a>
+    <!-- <a href="authentification.html" class="button">Go to Google</a> -->
+    <br>
+    <br>
+    <br>
+    </div>
+</div>
+    </div>
+ </div>   
+</div>
+<div class="row">
+    <div class="col-md-6 offset-md-1 shadow " >
+        <h1 >our site helps you to create your portfolio  </h1>
+             </div>
+    <div class="col-md-6 offset-md-5 shadow ">
+<h1 class=>subscribe to ower site and join our <span class="shadow" id="count">{{ users|length }} </span>users</h1>
+     </div>
+</div>
+</body>
+<style>
+    .shadow{margin-top:50px; background-color:aqua; border-radius: 9px;font-style: italic;
+    font-family: cursive;}
+    a{text-decoration: none;}
+    #count{color:white; background-color:red; padding:0 5Px 0 5px;}
+</style>
+</html>
